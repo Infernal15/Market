@@ -1,0 +1,15 @@
+C:\Users\vlad9\source\repos\АРМ касира\АРМ касира\bin\Debug\АРМ касира.exe.config
+C:\Users\vlad9\source\repos\АРМ касира\АРМ касира\bin\Debug\АРМ касира.exe
+C:\Users\vlad9\source\repos\АРМ касира\АРМ касира\bin\Debug\АРМ касира.pdb
+C:\Users\vlad9\source\repos\АРМ касира\АРМ касира\obj\Debug\АРМ касира.csprojAssemblyReference.cache
+C:\Users\vlad9\source\repos\АРМ касира\АРМ касира\obj\Debug\MainWindow.g.cs
+C:\Users\vlad9\source\repos\АРМ касира\АРМ касира\obj\Debug\App.g.cs
+C:\Users\vlad9\source\repos\АРМ касира\АРМ касира\obj\Debug\АРМ касира_MarkupCompile.cache
+C:\Users\vlad9\source\repos\АРМ касира\АРМ касира\obj\Debug\АРМ касира_MarkupCompile.lref
+C:\Users\vlad9\source\repos\АРМ касира\АРМ касира\obj\Debug\MainWindow.baml
+C:\Users\vlad9\source\repos\АРМ касира\АРМ касира\obj\Debug\АРМ касира.g.resources
+C:\Users\vlad9\source\repos\АРМ касира\АРМ касира\obj\Debug\АРМ_касира.Properties.Resources.resources
+C:\Users\vlad9\source\repos\АРМ касира\АРМ касира\obj\Debug\АРМ касира.csproj.GenerateResource.cache
+C:\Users\vlad9\source\repos\АРМ касира\АРМ касира\obj\Debug\АРМ касира.csproj.CoreCompileInputs.cache
+C:\Users\vlad9\source\repos\АРМ касира\АРМ касира\obj\Debug\АРМ касира.exe
+C:\Users\vlad9\source\repos\АРМ касира\АРМ касира\obj\Debug\АРМ касира.pdb
