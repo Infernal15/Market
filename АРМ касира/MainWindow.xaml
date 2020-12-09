@@ -11,7 +11,7 @@
         <Button x:Name="rep" Content="Добавити подію" HorizontalAlignment="Left" Margin="335,155,0,0" VerticalAlignment="Top" Width="115" Height="35"/>
         <Button x:Name="exit" Content="Вихід" HorizontalAlignment="Left" Margin="335,305,0,0" VerticalAlignment="Top" Width="115" Height="35" Click="Button_Click_1"/>
         <Button x:Name="ret" Content="повернутися" HorizontalAlignment="Left" Margin="5,441,0,0" VerticalAlignment="Top" Width="75" Click="ret_Click"/>
-        <ComboBox x:Name="combo" HorizontalAlignment="Left" Margin="10,13,0,0" VerticalAlignment="Top" Width="120">
+        <ComboBox x:Name="combo" HorizontalAlignment="Left" Margin="10,13,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="combo_SelectionChanged">
             <ComboBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -22,7 +22,7 @@
             </ComboBox.RenderTransform>
         </ComboBox>
         <Calendar x:Name="calendar1" FirstDayOfWeek="Monday" SelectionMode="SingleRange"
-        xmlns:sys="clr-namespace:System;assembly=mscorlib" Margin="80,1,177,-1" MouseDown="calendar1_MouseDown"/>
+        xmlns:sys="clr-namespace:System;assembly=mscorlib" Margin="80,1,177,-1" SelectedDatesChanged="calendar1_SelectedDatesChanged"/>
 
         <Grid x:Name="grid" HorizontalAlignment="Left" Height="255" Margin="10,174,0,-10" VerticalAlignment="Top" Width="535"/>
         <Button x:Name="reserv" Content="Зарезервувати" HorizontalAlignment="Left" Margin="455,429,0,0" VerticalAlignment="Top" Width="90" Click="reserv_Click" Height="25"/>

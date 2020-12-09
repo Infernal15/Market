@@ -151,9 +151,20 @@ namespace АРМ_касира
         private void reserv_Click(object sender, RoutedEventArgs e)
         {
             if (combo.SelectedIndex == -1)
+            {
                 MessageBox.Show("Виберіть виставу");
+                return;
+            }
             else if (calendar1.SelectedDate.ToString() == "")
+            {
                 MessageBox.Show("Виберіть дату");
+                return;
+            }
+            else if (calendar1.SelectedDate < DateTime.Today)
+            {
+                MessageBox.Show("Невірна дата, перевірте вибрану дату виступу");
+                return;
+            }
             else if (sum == 0)
             {
                 MessageBox.Show("Виберіть місце");
@@ -168,13 +179,46 @@ namespace АРМ_касира
                         tmp.Add(new KeyValuePair<int, int>(i, j));
                 }
 
-            if (!File.Exists($"users\\{calendar1.SelectedDate}"))
-                File.Create($"users\\{calendar1.SelectedDate}");
+            if (!Directory.Exists($"theater\\{combo.SelectedItem}"))
+                Directory.CreateDirectory($"theater\\{combo.SelectedItem}");
+
+            using (StreamWriter writer = new StreamWriter($"theater\\{combo.SelectedItem}\\{calendar1.SelectedDate.Value.ToShortDateString()}.txt", true, Encoding.UTF8))
+            {
+                for (int i = 0; i < tmp.Count; i++)
+                    writer.WriteLine($"{tmp[i].Key},{tmp[i].Value}");
+            }
+
+            MessageBox.Show("Місця успішно зарезервовані");
         }
 
-        private void calendar1_MouseDown(object sender, MouseButtonEventArgs e)
+        private void calendar1_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
         {
-            sum = 2;
+            if (File.Exists($"theater\\{combo.SelectedItem}\\{calendar1.SelectedDate.Value.ToShortDateString()}.txt"))
+                using (StreamReader read = new StreamReader($"theater\\{combo.SelectedItem}\\{calendar1.SelectedDate.Value.ToShortDateString()}.txt"))
+                {
+                    List<string[]> tmp = new List<string[]>();
+                    while (!read.EndOfStream)
+                    {
+                        tmp.Add(read.ReadLine().Split(','));
+                    }
+                    foreach (string[] tps in tmp)
+                        buttons[Convert.ToInt32(tps[0]), Convert.ToInt32(tps[1])].Background = Brushes.DarkRed;
+                }
+            else
+            {
+                for (int i = 0; i < size.Key; i++)
+                    for (int j = 0; j < size.Value; j++)
+                        buttons[i, j].Background = Brushes.LightGreen;
+                    
+            }
+
+            sum = 0;
+            price.Content = Convert.ToString(sum);
+        }
+
+        private void combo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            calendar1_SelectedDatesChanged(sender, e);
         }
     }
 }
